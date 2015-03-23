@@ -189,9 +189,11 @@
                   unpacked.textures.push(+textures[(vertex[1] - 1) * 2 + 1]);
                 }
                 // vertex normals
-                unpacked.norms.push(+vertNormals[(vertex[2] - 1) * 3 + 0]);
-                unpacked.norms.push(+vertNormals[(vertex[2] - 1) * 3 + 1]);
-                unpacked.norms.push(+vertNormals[(vertex[2] - 1) * 3 + 2]);
+                if(vertNormals.length > 0) {
+                  unpacked.norms.push(+vertNormals[(vertex[2] - 1) * 3 + 0]);
+                  unpacked.norms.push(+vertNormals[(vertex[2] - 1) * 3 + 1]);
+                  unpacked.norms.push(+vertNormals[(vertex[2] - 1) * 3 + 2]);
+                }
                 // add the newly created vertex to the list of indices
                 unpacked.hashindices[elements[j]] = unpacked.index;
                 unpacked.indices.push(unpacked.index);
